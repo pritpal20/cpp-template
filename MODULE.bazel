@@ -1,0 +1,29 @@
+###############################################################################
+# Bazel now uses Bzlmod by default to manage external dependencies.
+# Please consider migrating your external dependencies from WORKSPACE to MODULE.bazel.
+#
+# For more details, please check https://github.com/bazelbuild/bazel/issues/18958
+###############################################################################
+module(
+    name = "bar",
+    repo_name = "com_foo_bar",
+)
+bazel_dep(name = "rules_cc", version = "0.0.17")
+bazel_dep(name = "googletest", version = "1.15.2")
+bazel_dep(name = "glog", version = "0.5.0")
+bazel_dep(name = "abseil-cpp", version = "20240116.0")
+bazel_dep(name = "google_benchmark", version = "1.9.2")
+bazel_dep(name = "gflags", version = "2.2.2")
+
+# new_local_repository(
+#     name = "usr_local",
+#     build_file = "third_party/usr_local.BUILD",
+#     path = "/usr/local",
+# )
+
+# # Assuming zlib is installed in usr/local/opt/zlib/lib
+# new_local_repository(
+#     name = "zlib",
+#     build_file = "third_party/zlib.BUILD",
+#     path = "/opt/homebrew/opt/zlib/lib",
+# )

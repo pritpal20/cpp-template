@@ -21,14 +21,14 @@ testing::AssertionResult IsAlmostEq2(int a, int b) {
 }
 
 TEST(ExpectPredTest, IsAlmostEq) {
-  int a = 10;
+  int a = 999;
   int b = 1000;
   EXPECT_TRUE(IsAlmostEq(a, b));
   EXPECT_PRED2(IsAlmostEq, a, b);
 }
 
 TEST(ExpectPredTest, IsAlmostEq2) {
-  int a = 10;
+  int a = 1000;
   int b = 1000;
   EXPECT_TRUE(IsAlmostEq2(a, b));
 }

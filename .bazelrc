@@ -1,5 +1,7 @@
 # Address sanitizer configuration.
 # ASAN_SYMBOLIZER_PATH=/usr/local/Cellar/llvm/13.0.0_1/bin/llvm-symbolizer
+# Enable Bzlmod for every Bazel command
+common --enable_bzlmod
 
 # Address sanitizer config
 # Use with bazel run --config=asan or lsan

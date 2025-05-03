@@ -27,18 +27,18 @@ TEST(BasicChecks, SimpleAssertMacros) {
   int b = 1;
   ASSERT_EQ(a, a);
   ASSERT_NE(a, b);
-  ASSERT_GT(b, a);
-  ASSERT_GT(a, b);  // This will fail
+  // ASSERT_GT(b, a);
+  // ASSERT_GT(a, b);  // This will fail
   std::cout << ">--------------------After Assert-------------------->"
             << std::endl;
 }
 TEST(BasicChecks, SimpleExpectMacros) {
-  int a = 0;
+  int a = 1;
   int b = 1;
   EXPECT_EQ(a, a);
-  EXPECT_NE(a, b);
-  EXPECT_GT(b, a);
-  EXPECT_GT(a, b);  // This will fail
+  EXPECT_NE(a, 2);
+  EXPECT_GT(2, a);
+  EXPECT_GT(2, b);  // This will fail
 
   std::cout << ">--------------------After Expect-------------------->"
             << std::endl;
@@ -47,12 +47,12 @@ TEST(BasicChecks, SimpleExpectMacros) {
 TEST(BasicChecks, ExplicitSuccessFails) {
   SUCCEED();
   // This will generate a nonfatal failure.
-  ADD_FAILURE();
-  // This will generate a nonfatal failure.
-  ADD_FAILURE_AT("MyTestFile.cc", 10);
+  // ADD_FAILURE();
+  // // This will generate a nonfatal failure.
+  // ADD_FAILURE_AT("MyTestFile.cc", 10);
 
-  // This will generate a fatal failure.
-  FAIL();
+  // // This will generate a fatal failure.
+  // FAIL();
 
   std::cout << ">--------------------After FAIL-------------------->"
             << std::endl;

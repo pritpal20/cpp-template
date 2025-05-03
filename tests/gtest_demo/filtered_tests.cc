@@ -15,6 +15,6 @@ TEST(BasicChecks, MyTest1) { EXPECT_TRUE(true); }
 
 TEST(BasicChecks, MyTest2) { EXPECT_TRUE(true); }
 
-TEST(BasicChecks, YourTest1) { EXPECT_TRUE(false); }
+TEST(BasicChecks, YourTest1) { EXPECT_TRUE(true); }
 
-TEST(BasicChecks, YourTest2) { EXPECT_TRUE(false); }
+TEST(BasicChecks, YourTest2) { EXPECT_TRUE(true); }

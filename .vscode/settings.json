@@ -132,4 +132,5 @@
     "CodeLLDB"
   ],
   "editor.mouseWheelZoom": true,
+  "C_Cpp.errorSquiggles": "disabled",
 }

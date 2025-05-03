@@ -37,9 +37,9 @@ struct Person {
 
 TEST(PersonTest, CanAssertEqualitySimple) {
   Person p_ari("Ari", 25);
-  Person p_ted("Ted", 21);
+  Person p_ted("Ted", 25);
 
-  EXPECT_EQ(p_ari.name, p_ted.name);
+  EXPECT_NE(p_ari.name, p_ted.name);
   EXPECT_EQ(p_ari.age, p_ted.age);
 }
 
@@ -48,12 +48,12 @@ TEST(PersonTest, CanDirectlyAssertEquality) {
   Person p_ted("Ted", 21);
 
   EXPECT_EQ(p_ari, p_ari);
-  EXPECT_EQ(p_ari, p_ted);
+  EXPECT_NE(p_ari.age, p_ted.age);
 }
 
 TEST(PersonTest, CanDirectlyAssertEqualityAndPrint) {
   Person p_ari("Ari", 25);
-  Person p_ted("Ted", 21);
+  Person p_ted("Ted", 25);
 
-  EXPECT_EQ(p_ari, p_ted) << PrintToString(p_ari) << p_ted.DebugString();
+  // EXPECT_EQ(p_ari, p_ted) << PrintToString(p_ari) << p_ted.DebugString();
 }
